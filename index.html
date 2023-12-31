@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="googlebb9256908b67c464.html">
+    <meta name="google-site-verification" content="qeZjGz16H7cJ0NB67woKzdNoBfw0yjUtpYW1lzaoOSQ" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Calculator: Maths Calculator</title>
+    <meta name="description" content="Free online calculator for math calculations. Perform basic, mortgage, interest rate, mean-mode-median, quadratic, BMI, and GPA calculations.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div class="with-image">
+    <img src="images/logo1.png" alt="logo Image" class="title-image">
+    <div class="title">Free online calculator</div>
+</div>
+<body>
+
+    <header>
+        <?php if ($loggedIn) { ?>
+            <a href="logout.php" class="btn btn-warning align-right custom-btn">Login</a>
+        <?php } else { ?>
+            <a href="signup.php" class="btn btn-primary align-right custom-btn" style="margin-right: 10px;">Sign Up</a>
+        <?php } ?>
+    </header>
+    <div class="calculator-wrapper">
+    <div class="dropdown-menu" aria-labelledby="calculatorDropdown">
+        <a class="dropdown-items custom-btn1" href="#basic">Basic Calculator</a>
+        <a class="dropdown-items custom-btn1" href="#Mortcalc">Mortgage Calculator</a>
+        <a class="dropdown-items custom-btn1" href="#irate">Interest rate Calc</a>
+        <a class="dropdown-items custom-btn1" href="#meanc">Mean, Mode, Medium</a>
+        <a class="dropdown-items custom-btn1" href="#quadr">Quadratic Calculator</a>
+        <a class="dropdown-items custom-btn1" href="#bmis">BMI Calculator</a>
+        <a class="dropdown-items custom-btn1" href="#gpac">GPA Calculator</a>
+    </div>
+    <div class="calculatory" id="basic">
+        <input type="text" class="input1" id="display" readonly>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="appendToDisplay('1')">1</button>
+        </div>
+        </div>
+        <div class="featuresx">
+           <P class="featuresx-header">More features</P>
+           <p>Turnitin report</p>
+           <p>Grammerly Logins</p>
+           <p>Quillbot Logins</p>
+           <p>Turnitin Logins</p>
+           <p>
+            <button class="message" id="whatsappButton">Whatsapp here</button>
+            <img src="images/what.png" alt="whatsapp" class="whatsapp">
+        </p>
+        </div>
+    </div>
+    <div class="two-enclosed">
+    <div class="ad-container">
+    <div>
+        <div style="font-size: 24px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color: rgb(255, 255, 255);
+        position: relative;">Struggling with Assignments?</div>
+        <div style="font-size: 16px;
+        margin-bottom: 20px;
+        color: rgb(255, 238, 7);"><marquee>Get professional assignment help from experts. <br>Achieve better grades with our assistance.</marquee></div>
+        <a href="https://assignmenthelpers.online" target="_blank" style="display: flex;
+        text-align: center;
+        padding: 15px 30px;
+        background-color: #4e2a8f;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        position: relative;
+        margin-left: 20%;
+        width: 30%;">Get Help😊</a>
+        <a href="https://assignmenthelpers.online" style="display: inline-block;
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #4e2a8f;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        margin-right: 40px;
+        position: relative;">Learn More</a>
+    </div>
+    </div>
+    <div class="Mortgage-calc" id="Mortcalc">
+        <h2>Mortgage Calculator</h2>
+        <label for="loanAmount">Loan Amount:</label>
+        <input type="number" id="loanAmount" placeholder="Enter loan amount"> <br>
+    
+        <label for="interestRate">Interest Rate (%):</label>
+        <input type="number" id="interestRate" placeholder="Enter interest rate"><br>
+    
+        <label for="loanTerm">Loan Term (years):</label>
+        <input type="number" id="loanTerm" placeholder="Enter loan term"><br>
+    
+        <button onclick="calculateMortgage()" class="mortgager">Calculate Mortgage</button>
+    
+        <div id="mortgageResult" style="font-style:oblique; margin-top: 10px;"></div>
+    </div>  
+    </div>  
+    <div>
+    </div>
+        <div class="interest-rate" id="irate">
+            <h2>Interest Rate Calculator</h2>
+            <label for="principal">Principal Amount:</label>
+            <input type="number" id="principal" placeholder="Enter principal amount"><br>
+        
+            <label for="interest">Interest Amount:</label>
+            <input type="number" id="interest" placeholder="Enter interest amount"><br>
+        
+            <label for="time">Time (years):</label>
+            <input type="number" id="time" placeholder="Enter time in years"><br>
+        
+            <button onclick="calculateInterestRate()" class="interest">Calculate Interest Rate</button>
+        
+            <div id="interestRateResult" style="font-style:oblique; margin-top: 10px;"></div>
+        </div>
+    <div class="calculator" id="meanc">
+        <h2>Mean, Mode, and Medium Calculator</h2>
+        <label for="data">Enter Data (comma-separated):</label>
+        <input type="text" id="data" placeholder="e.g., 10, 20, 30, 40"><br>
+
+        <label for="operations">Select Operations:</label><br>
+        <select id="operations" multiple>
+            <option value="mean">Mean</option>
+            <option value="median">Median</option>
+            <option value="standardDeviation">Standard Deviation</option>
+        </select> <br>
+
+        <button onclick="calculateStatistics()" class="interest">Calculate</button>
+
+        <div id="result" style="font-style:oblique; margin-top: 10px;"></div>
+    </div>
+    <div class="calculatorx" id="quadr">
+        <h2>Quadratic Equation Calculator</h2>
+        <label for="equation">Enter Equation:</label>
+        <input type="text" id="equation" placeholder="e.g., 2x^2 - 5x + 2">
+
+        <button onclick="solveQuadratic()">Solve</button>
+
+        <div id="resultx" style="font-style:oblique; margin-top: 10px;"></div>
+    </div>
+    <div class="calculator" id="bmis">
+        <h2>Body Mass Index (BMI) Calculator</h2>
+        <label for="weight">Weight (kg):</label><br>
+        <input type="number" id="weight" placeholder="Enter weight in kilograms"><br>
+
+        <label for="height">Height (m):</label><br>
+        <input type="number" id="height" placeholder="Enter height in meters"><br>
+
+        <button onclick="calculateBMI()">Calculate BMI</button>
+
+        <div id="bmiResult"></div>
+    </div>
+    <div class="calculator" id="gpac">
+        <h2>GPA Calculator</h2>
+        <label for="grades">Enter Grades (comma-separated):</label><br>
+        <input type="text" id="grades" placeholder="e.g., 4, 3.5, 3, 3.8"><br>
+
+        <label for="credits">Enter Credits (comma-separated):</label><br>
+        <input type="text" id="credits" placeholder="e.g., 3, 4, 3, 2"><br>
+
+        <button onclick="calculateGPA()">Calculate GPA</button>
+
+        <div id="gpaResult"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
